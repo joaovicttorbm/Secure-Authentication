@@ -3,9 +3,13 @@ import helmet from 'helmet';
 import cors from 'cors';
 import cookieParser from 'cookie-parser';
 import { connect } from 'mongoose';
+import dotenv from 'dotenv';
 
-import authRouter from './routers/authRouter';
-import postsRouter from './routers/postsRouter';
+dotenv.config();
+
+
+// import authRouter from './routers/authRouter';
+// import postsRouter from './routers/postsRouter';
 
 // Inicializa o aplicativo Express
 const app = express();
@@ -29,8 +33,8 @@ const connectDatabase = async () => {
 connectDatabase();
 
 // Rotas da aplicação
-app.use('/api/auth', authRouter); // Gerenciamento de autenticação
-app.use('/api/posts', postsRouter); // CRUD para posts
+// app.use('/api/auth', authRouter); // Gerenciamento de autenticação
+// app.use('/api/posts', postsRouter); // CRUD para posts
 
 // Rota inicial para verificar o funcionamento do servidor
 app.get('/', (req, res) => {
